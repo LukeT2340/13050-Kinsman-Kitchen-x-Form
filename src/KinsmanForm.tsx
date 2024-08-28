@@ -34,9 +34,9 @@ const KinsmanForm  = () => {
                 setSubmitting(false)
                 }}>
                 <Form className={`flex flex-col font-bold font-gotham items-center w-[100%] lg:w-[1088px] lg:mx-0 mx-[100px] h-[700px] ${currentPage === PageNumber.three ? '' : 'bg-white shadow-custom'} p-[54.75px] translate-y-[50px]`}>
-                    <div className='flex flex-row gap-[21.05px] items-center '>
+                    <div className='flex flex-row items-center '>
                         <h2 className={`${currentPage === PageNumber.three ? 'text-white' : 'text-black'} font-philosopher`}>KINSMAN</h2>
-                        <div className='w-[1px] h-[52px] bg-customGray'></div>
+                        <div className='w-[1px] h-[52px] ml-[21.05px] bg-customGray'></div>
                         <img src='/images/theblock-logo.png' alt="the block logo" className='w-[127px] h-auto'/>
                     </div>
 
