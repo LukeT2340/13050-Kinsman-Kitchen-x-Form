@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="34" viewBox="0 0 152 34">
+  <g id="Facebook" transform="translate(-837 -407)">
+    <rect id="Rectangle_43" data-name="Rectangle 43" width="152" height="34" rx="6" transform="translate(837 407)" fill="#3b5999"/>
+    <line id="Line_2" data-name="Line 2" y2="19.487" transform="translate(867.53 414.145)" fill="none" stroke="#fff" stroke-width="0.5"/>
+    <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" d="M10.2,9.655l.477-3.106H7.7V4.533A1.553,1.553,0,0,1,9.447,2.855H10.8V.21A16.524,16.524,0,0,0,8.4,0C5.942,0,4.338,1.488,4.338,4.181V6.548H1.609V9.655H4.338v7.509H7.7V9.655Z" transform="translate(847.788 414.795)" fill="#fff"/>
+    <text id="Share_on_Facebook" data-name="Share on Facebook" transform="translate(924 427)" fill="#fff" font-size="13" font-family="SegoeUI, Segoe UI" letter-spacing="-0.05em"><tspan x="-49.276" y="0">Share on Facebook</tspan></text>
+  </g>
+</svg>
