@@ -15,7 +15,11 @@ module.exports = {
       fontFamily: {
         'gotham': ['Gotham', 'sans-serif'],
         'philosopher': ['Philosopher', 'sans-serif']
-      }
+      },
+      boxShadow: {
+        'custom': '0px 10px 30px rgba(0, 0, 0, 0.26)',
+        'custom-text': '5px 10px 45px rgba(0, 0, 0, 0.56)'
+      },
     },
   },
   plugins: [],

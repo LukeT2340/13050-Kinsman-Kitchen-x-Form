@@ -44,7 +44,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.text-shadow-custom {
-  text-shadow: 5px 10px 45px rgba(0, 0, 0, 0.56);
-}

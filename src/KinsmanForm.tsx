@@ -10,7 +10,6 @@ Questions for Josh:
 - Font size not matching.
 - Text, divider and logo not equally separated
 - Can't see mobile design on xd
-- How to add animations when state changes
 - Font weight
 - What should happen when the user clicks next but hasn't entered anything. General form error handling
 - Fonts for text inside textarea
@@ -27,14 +26,14 @@ const KinsmanForm  = () => {
     }
 
     return (
-        <div className="text-gotham text-[30px] flex flex-col items-center justify-center w-[100vw] h-[100vh] bg-[url('../public/images/img-02.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="text-gotham text-[30px] flex flex-col items-center justify-center w-[100vw] h-[100vh] bg-[url('../public/images/img-02.jpg')] bg-center bg-no-repeat">
             <Formik
                 initialValues={{ partyDescription: '' , firstName: '', lastName: '', mobile: '', state: '', email: '', postcode: '' }}
                 onSubmit={(values, { setSubmitting }) => {
                     handleSubmit(values)
                 setSubmitting(false)
                 }}>
-                <Form className={`flex flex-col font-bold font-gotham items-center w-[100%] lg:w-[1088px] lg:mx-0 mx-[100px] h-[700px] ${currentPage === PageNumber.three ? '' : 'bg-white'} p-[54.75px] translate-y-[43px]`}>
+                <Form className={`flex flex-col font-bold font-gotham items-center w-[100%] lg:w-[1088px] lg:mx-0 mx-[100px] h-[700px] ${currentPage === PageNumber.three ? '' : 'bg-white shadow-custom'} p-[54.75px] translate-y-[50px]`}>
                     <div className='flex flex-row gap-[21.05px] items-center '>
                         <h2 className={`${currentPage === PageNumber.three ? 'text-white' : 'text-black'} font-philosopher`}>KINSMAN</h2>
                         <div className='w-[1px] h-[52px] bg-customGray'></div>
