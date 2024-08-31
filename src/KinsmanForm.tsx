@@ -9,12 +9,12 @@ import * as Yup from 'yup'
 
 // Define validation schema
 const validationSchema = Yup.object({
-    firstName: Yup.string().required('First name is required'),
-    lastName: Yup.string().required('Last name is required'),
+    firstName: Yup.string().required('First name is required').matches(/[A-Za-z]{2,}/, "Please enter a valid first name"),
+    lastName: Yup.string().required('Last name is required').matches(/[A-Za-z]{2,}/, "Please enter a valid last name"),
     email: Yup.string().email('Invalid email format').required('Email is required'),
     mobile: Yup.string().required('Mobile number is required'),
-    state: Yup.string().required('State is required'),
-    partyDescription: Yup.string().required('Party description is required'),
+    state: Yup.string().required('State is required').matches(/A-Za-z]{2,}/, "Please enter a valid state"),
+    partyDescription: Yup.string().required('Party description is required').matches(/^(?:\b\w+\b[\s\r\n]*){1,25}$/, "Party description is too long"),
     postcode: Yup.string().required('Post code is required')
 })
 

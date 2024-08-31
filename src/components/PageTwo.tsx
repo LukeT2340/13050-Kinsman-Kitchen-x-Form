@@ -18,7 +18,7 @@ const PageTwo: React.FC<PageTwoProps> = ({ formik }) => {
                             type={field.fieldType}  
                             name={field.name} 
                             className="border border-customLighterGray outline-none w-full text-[13px] h-[36px] p-[6px] text-customForestGreen" 
-                            pattern={field.pattern}
+                            //pattern={field.pattern}
                             />
                         <ErrorMessage name={field.name} component="div" className='text-red text-[12px]'/>
                     </div>
