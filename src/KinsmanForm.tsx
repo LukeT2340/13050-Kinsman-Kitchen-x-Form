@@ -18,11 +18,44 @@ const KinsmanForm  = () => {
           email: '',
           postcode: '',
         },
-        onSubmit: (values) => {
-          alert(JSON.stringify(values, null, 2));
-          console.log(values)
-          // move to page 3 if successfully submitted
-          setCurrentPage(3)
+        onSubmit: async (values) => {
+            try {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/kinsman/submit`, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(values),
+                })
+
+                // Handle success
+                if (response.ok) {
+                    setCurrentPage(3)
+                    return
+                }
+
+                // Handle duplicate submissions
+                if (response.status === 422) {
+                    const  attribute  = await response.json()
+
+                    if (attribute === "mobile") {
+                        // handle duplicate mobile
+                        return
+                    }
+    
+                    if (attribute === "email") {
+                        // handle duplicate email
+                        return
+                    }
+                }
+
+                // Handle other 400+ http response statuses
+            } catch (error) {
+                console.log(error)
+            }
+
+            // move to page 3 if successfully submitted
+            //setCurrentPage(3)
         },
       });
 

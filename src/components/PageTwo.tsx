@@ -2,7 +2,7 @@ import { formFields } from '../utils/formFields'
 import { FormikProps } from 'formik'
 import { FormInitialVal } from '../types'
 
-interface PageTwoProps extends FormikProps<FormInitialVal> {
+interface PageTwoProps {
     formik: FormikProps<FormInitialVal>;
 }
 
@@ -21,7 +21,7 @@ const PageTwo: React.FC<PageTwoProps> = ({ formik }) => {
                             name={field.name} 
                             className="border border-customLighterGray outline-none w-full text-[13px] h-[36px] p-[6px]" 
                             onChange={formik.handleChange}
-                            value={values[field.name]}
+                            value={values[field.name as keyof FormInitialVal]}
                             pattern={field.pattern}
                             required/>
                     </div>
