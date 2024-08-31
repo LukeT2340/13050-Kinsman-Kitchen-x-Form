@@ -1,4 +1,4 @@
-import { FormikProps } from "formik"
+import { FormikProps, ErrorMessage } from "formik"
 import { FormInitialVal } from "../types"
 
 const PageOne = ({ setCurrentPage, formik }: { setCurrentPage: (arg0: number) => void, formik: FormikProps<FormInitialVal> }) => {
@@ -13,12 +13,16 @@ const PageOne = ({ setCurrentPage, formik }: { setCurrentPage: (arg0: number) =>
                     onChange={formik.handleChange}
                     value={formik.values.partyDescription}
                 />
+                <ErrorMessage name="partyDescription" component="div" className='text-red text-[12px]'/>
             </div>
             <button 
                 className='mt-[38px] bg-customGreen w-[150px] h-[42px] font-gotham font-light text-white text-[20px] leading-[28px] hover:bg-white border-[1px] border-customGreen hover:text-customGreen' 
                 onClick={() => setCurrentPage(2)}
+                disabled={formik.values["partyDescription"].length === 0 || formik.values["partyDescription"].split(" ").length > 25}
                 >
                     Next
+
+
             </button>
         </>
     )

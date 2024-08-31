@@ -1,5 +1,5 @@
 import { formFields } from '../utils/formFields'
-import { FormikProps } from 'formik'
+import { FormikProps, ErrorMessage, Field  } from 'formik'
 import { FormInitialVal } from '../types'
 
 interface PageTwoProps {
@@ -7,23 +7,20 @@ interface PageTwoProps {
 }
 
 const PageTwo: React.FC<PageTwoProps> = ({ formik }) => {
-    const { values } = formik;
-
     return (
         <>
             <h5 className="font-gotham font-[500] text-[21px] leading-[39px] mt-[32.85px] mb-[40.75px]">To finalise your entry please fill in your details below</h5>
-            <div className='grid grid-cols-2 gap-x-[40px] gap-y-[18px] text-customForestGreen lg:w-[567px]'>
+            <div className='grid grid-cols-2 gap-x-[40px] gap-y-[18px] lg:w-[567px]'>
                 {formFields.map((field) => (
                     <div className='flex flex-col w-[265px] mr-[40px]' key={field.name}>
-                        <label htmlFor={field.fieldType} className='text-[13px] leading-[23px]'>{field.label}*</label>
-                        <input 
+                        <label htmlFor={field.fieldType} className='text-[13px] leading-[23px] text-customForestGreen'>{field.label}*</label>
+                        <Field
                             type={field.fieldType}  
                             name={field.name} 
-                            className="border border-customLighterGray outline-none w-full text-[13px] h-[36px] p-[6px]" 
-                            onChange={formik.handleChange}
-                            value={values[field.name as keyof FormInitialVal]}
+                            className="border border-customLighterGray outline-none w-full text-[13px] h-[36px] p-[6px] text-customForestGreen" 
                             pattern={field.pattern}
-                            required/>
+                            />
+                        <ErrorMessage name={field.name} component="div" className='text-red text-[12px]'/>
                     </div>
                 ))}
             </div>
